@@ -88,15 +88,3 @@ async def get_discount_etfs():
     ]
     discount_etfs.sort(key=lambda x: x.get('premium_discount_pct', 0))
     return {"result": discount_etfs}
-```
-
-**File 2: `requirements.txt`**
-```
-fastapi==0.104.1
-uvicorn==0.24.0
-requests==2.31.0
-```
-
-**File 3: `Procfile`** (for Railway)
-```
-web: uvicorn main:app --host 0.0.0.0 --port $PORT
